@@ -47,6 +47,7 @@
 
 ;; Display file size/time in mode-line
 (setq display-time-24hr-format t) ;; 24-часовой временной формат в mode-line
+(setq column-number-mode t)		  ;; Column number and line are shown
 (display-time-mode             t) ;; показывать часы в mode-line
 (size-indication-mode          t) ;; размер файла в %-ах
 
@@ -123,6 +124,7 @@
  '(doom-modeline-buffer-file-true-name t)
  '(doom-modeline-buffer-modification-icon t)
  '(doom-modeline-display-default-persp-name t)
+ '(doom-modeline-position-column-line-format '("%l:%c"))
  '(doom-modeline-position-line-format '(""))
  '(package-selected-packages
    '(shell-pop vterm which-key @ centaur-tabs lsp-treemacs consult treemacs-projectile treemacs dashboard projectile vertico))

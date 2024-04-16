@@ -298,7 +298,7 @@
 ;; Perfect-margin
 (use-package perfect-margin
 	:custom
-    (perfect-margin-visible-width 128)
+    (perfect-margin-visible-width 160)
 	:config
 	(toggle-truncate-lines)
 	;; enable perfect-mode
