@@ -105,6 +105,9 @@
 	"C-H" 'nil
 	"C-<left>" 'treemacs-root-up		        ; Move treemacs root one directory up
 	"C-<right>" 'treemacs-root-down				; Move treemacs root to selected directory
+	"C-<up>" 'treemacs-move-project-up		    ; Move project up in treemacs
+	"C-<down>" 'treemacs-move-project-down		; Move project down in treemacs
+    
     )
 
 
