@@ -132,6 +132,8 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(highlight ((t (:background "#737994" :foreground "#e5c890"))))
+ '(lsp-face-highlight-read ((t (:inherit highlight))))
  '(mode-line ((t (:foreground "#b4befe" :background "#45475a" :box "#cba6f7"))))
  '(mode-line-inactive ((t (:foreground "#a6adc8" :background "#313244" :box "#6c7086")))))
 
