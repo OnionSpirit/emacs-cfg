@@ -295,6 +295,28 @@
 
 
 
+;; Perfect-margin
+(use-package perfect-margin
+	:custom
+    (perfect-margin-visible-width 128)
+	:config
+	(toggle-truncate-lines)
+	;; enable perfect-mode
+    (perfect-margin-mode t)
+	;; auto-center minibuffer windows
+    (setq perfect-margin-ignore-filters nil)
+	;; auto-center special windows
+    (setq perfect-margin-ignore-regexps nil)
+	;; add additinal bding on margin area
+    (dolist (margin '("<left-margin> " "<right-margin> "))
+		(global-set-key (kbd (concat margin "<mouse-1>")) 'ignore)
+		(global-set-key (kbd (concat margin "<mouse-3>")) 'ignore)
+		(dolist (multiple '("" "double-" "triple-"))
+			(global-set-key (kbd (concat margin "<" multiple "wheel-up>")) 'mwheel-scroll)
+			(global-set-key (kbd (concat margin "<" multiple "wheel-down>")) 'mwheel-scroll))))
+
+
+
 ;; Blamer
 (use-package blamer
 	:defer 20
@@ -307,6 +329,7 @@
 	(blamer-prettify-time-p t)
 	(blamer-show-avatar-p t)
 	(blamer-type 'visual)
+	(blamer-max-commit-message-length 1000)
 	:custom-face
     (blamer-face ((t :foreground "#7a88cf"
                      :background nil
