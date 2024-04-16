@@ -50,6 +50,7 @@
 (setq column-number-mode t)		  ;; Column number and line are shown
 (display-time-mode             t) ;; показывать часы в mode-line
 (size-indication-mode          t) ;; размер файла в %-ах
+(show-paren-mode t)				  ;; Показывает строку со второй строкой
 
 ;; Syntax highlighting
 (require 'font-lock)
@@ -127,7 +128,13 @@
  '(doom-modeline-position-column-line-format '("%l:%c"))
  '(doom-modeline-position-line-format '(""))
  '(package-selected-packages
-   '(shell-pop vterm which-key @ centaur-tabs lsp-treemacs consult treemacs-projectile treemacs dashboard projectile vertico))
+   '(mic-paren shell-pop vterm which-key @ centaur-tabs lsp-treemacs consult treemacs-projectile treemacs dashboard projectile vertico))
+ '(paren-display-message 'always)
+ '(paren-dont-load-timer nil)
+ '(paren-message-linefeed-display "\"^J\"")
+ '(paren-message-no-match nil)
+ '(paren-message-show-linenumber 'absolute)
+ '(paren-sexp-mode nil)
  '(warning-suppress-log-types '((emacs))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -137,7 +144,10 @@
  '(highlight ((t (:background "#737994" :foreground "#e5c890"))))
  '(lsp-face-highlight-read ((t (:inherit highlight))))
  '(mode-line ((t (:foreground "#b4befe" :background "#45475a" :box "#cba6f7"))))
- '(mode-line-inactive ((t (:foreground "#a6adc8" :background "#313244" :box "#6c7086")))))
+ '(mode-line-inactive ((t (:foreground "#a6adc8" :background "#313244" :box "#6c7086"))))
+ '(paren-face-match ((t (:box (:line-width (3 . 3) :color "light sky blue" :style pressed-button)))))
+ '(paren-face-mismatch ((t (:foreground "indian red"))))
+ '(paren-face-no-match ((t (:foreground "goldenrod")))))
 
 
 ;; Centring frame at the screen 

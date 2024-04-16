@@ -16,7 +16,7 @@
 ;; Enabling use package
 (require 'use-package)
 
-;; Enabling auto-update for all packages
+;; Enabling auto-install for all packages
 (require 'use-package-ensure)
 (setq use-package-always-ensure t)
 
@@ -27,6 +27,13 @@
   (setq auto-package-update-delete-old-versions t)
   (setq auto-package-update-hide-results t)
   (auto-package-update-maybe))
+
+
+
+;; Advanced bracers matching
+(use-package mic-paren
+	:config
+	(paren-activate))
 
 
 
@@ -64,7 +71,6 @@
 	:hook
 	(prog-mode . company-mode)
 	(after-init-hook . global-company-mode))
-
 
 
 ;; LSP, language server

@@ -67,7 +67,6 @@ window height")
    (move-text-internal (- arg)))
 
 
-
 ;; Centering frame at the screen
 (defun frame-center ()
   "Center the current frame."

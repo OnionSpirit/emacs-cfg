@@ -8,6 +8,14 @@
 	"C-?"
 	"C-/"
 	)
+(general-define-key
+    :keymaps 'undo-fu-mode-map
+    "C-/" 'nil
+    "C-z" 'undo-fu-only-undo
+    )
+
+
+;; Global hotkeys
 (general-def
 	"C-c c c" 'compile					; Start compilation
 	"M-z" 'undo-redo					; Rollback undoed changes
@@ -17,12 +25,9 @@
 	"M-<up>" 'move-text-up				; Moves selected region up
 	"M-<down>" 'move-text-down			; Moves selected region down
 	)
-(general-define-key
-    :keymaps 'undo-fu-mode-map
-    "C-/" 'nil
-    "C-z" 'undo-fu-only-undo
-    )
 
+
+;; C/C++ modes hotkeys
 (general-define-key
     :keymaps '(c++-mode-map c-mode-map)
     "<backtab>" 'un-indent-by-removing-4-spaces   ; Backtab selected block
@@ -33,6 +38,7 @@
     "M-]" 'arg-forward							  ; Move coursor forward to next arg in args list
     "M-[" 'arg-backward						      ; Move coursor to the top of args list
     )
+
 
 ;; Dired
 ;; Subdir perfomance control
@@ -99,7 +105,7 @@
 (defconst treemacs-prefix (concat start-utility-prefix "t")) ;Treemacs utility prefix - t
 (general-create-definer treemacs-keymap)
 
-(treemacs-keymap "C-<tab>" 'treemacs-select-window)		;Toggle focus with treemacs
+(treemacs-keymap "C-<tab>" 'treemacs-select-window)		; Toggle focus with treemacs
 
 (treemacs-keymap
     :keymaps 'treemacs-mode-map
@@ -110,7 +116,6 @@
 	"C-<right>" 'treemacs-root-down				; Move treemacs root to selected directory
 	"C-<up>" 'treemacs-move-project-up		    ; Move project up in treemacs
 	"C-<down>" 'treemacs-move-project-down		; Move project down in treemacs
-    
     )
 
 
@@ -121,7 +126,7 @@
 (centaur-keymap
     :prefix centaur-prefix
 	""  '(nil :wk "Centaur-tabs")
-    "t" '(centaur-tabs-mode :wk "Toggling tab mode")              ; Toggling tab mode
+    "c" '(centaur-tabs-mode :wk "Toggling tab mode")              ; Toggling tab mode
     )
 
 (centaur-keymap
