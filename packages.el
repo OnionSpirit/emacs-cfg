@@ -76,31 +76,21 @@
            (lsp-mode . lsp-enable-which-key-integration))
 	:commands (lsp lsp-diferred))
 
-;; lsp helpfull ui
-(use-package lsp-ui)
-
-(use-package lsp-ui-peek
-	:after lsp-ui
-	:ensure lsp-ui
+;; LSP-UI, interface lsp helpers
+(use-package lsp-ui
+	:after lsp-mode
 	:custom
-	(setq lsp-ui-sideline-show-diagnostics t) ;; show diagnostics messages in sideline
-	;; (lsp-ui-sideline-show-hover t) ;; show hover messages in sideline
-	(setq lsp-ui-sideline-show-code-actions t) ;; show code actions in sideline
-	;; (lsp-ui-peek-show-directory 1))
-	)
-
-(use-package lsp-ui-doc
-	:ensure lsp-ui
-	:after lsp-ui
-	:custom
-	(lsp-ui-doc-position 'at-point)
+	(lsp-ui-sideline-enable t)
+	(lsp-ui-sideline-show-diagnostics t)
+	(lsp-ui-sideline-update-mode 1)
+	(lsp-ui-sideline-delay 0.5)
+	(lsp-ui-peek-enable t)
+	(lsp-ui-peek-show-directory 1)
+	(lsp-ui-doc-position 'top)
+	(lsp-ui-doc-side 'right)
 	(lsp-ui-doc-delay 1.5)
-	(lsp-ui-doc-show-with-cursor t)
-	:config
-	(lsp-ui-doc-enable t))
-(use-package lsp-ui-imenu
-	:ensure lsp-ui
-	:after lsp-ui)
+	(lsp-ui-doc-show-with-cursor t))
+
 (use-package lsp-treemacs
 	:ensure lsp-ui
 	:after lsp-ui)

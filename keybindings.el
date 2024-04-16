@@ -9,6 +9,7 @@
 	"C-/"
 	)
 (general-def
+	"C-c c c" 'compile					; Start compilation
 	"M-z" 'undo-redo					; Rollback undoed changes
 	"C-z" 'undo							; Undo changes
 	"C-c r" 'restart-emacs				; Restart emacs
