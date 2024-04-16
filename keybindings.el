@@ -13,6 +13,8 @@
 	"C-z" 'undo							; Undo changes
 	"C-c r" 'restart-emacs				; Restart emacs
 	"C-`" 'shell-pop					; Popup terminal
+	"M-<up>" 'move-text-up				; Moves selected region up
+	"M-<down>" 'move-text-down			; Moves selected region down
 	)
 (general-define-key
     :keymaps 'undo-fu-mode-map
