@@ -127,10 +127,6 @@
 ;; Treemacs, Popup window with project tree
 (use-package treemacs)
 
-;; Copability of treemacs and lsp
-(use-package lsp-treemacs
-	:after (lsp-mode treemacs))
-
 ;; Treemacs and Projectile copability
 (use-package treemacs-projectile
 	:after (projectile treemacs))

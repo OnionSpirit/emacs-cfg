@@ -7,6 +7,8 @@
 	"M-z"
 	"C-?"
 	"C-/"
+    "M-}"
+    "M-{"
 	)
 (general-define-key
     :keymaps 'undo-fu-mode-map
@@ -22,9 +24,11 @@
 	"C-z" 'undo							; Undo changes
 	"C-c r" 'restart-emacs				; Restart emacs
 	"C-`" 'shell-pop					; Popup terminal
+    "M-p" 'backward-paragraph           ; Moves coursor to the next paragraph
+    "M-n" 'forward-paragraph            ; Moves coursor to the previous paragraph
 	"M-<up>" 'move-text-up				; Moves selected region up
 	"M-<down>" 'move-text-down			; Moves selected region down
-	)
+    )
 
 
 ;; C/C++ modes hotkeys

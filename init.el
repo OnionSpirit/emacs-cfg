@@ -58,7 +58,7 @@
 (setq font-lock-maximum-decoration t)
 
 ;; Indent setting
-;; (setq-default indent-tabs-mode nil) ;; отключить возможность ставить отступы TAB'ом
+(setq-default indent-tabs-mode nil) ;; отключить возможность ставить отступы TAB'ом
 (setq-default tab-width          4) ;; ширина табуляции - 4 пробельных символа
 (setq-default c-basic-offset     4)
 (setq-default standart-indent    4) ;; стандартная ширина отступа - 4 пробельных символа
