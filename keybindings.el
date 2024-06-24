@@ -143,6 +143,15 @@
 (general-create-definer magit-keymap)
 
 (magit-keymap
+    :keymaps 'magit-mode-map
+	"M-a" 'magit-smerge-keep-all
+	"M-b" 'magit-smerge-keep-base
+	"M-c" 'magit-smerge-keep-current
+	"M-l" 'magit-smerge-keep-lower
+	"M-u" 'magit-smerge-keep-upper
+	)
+
+(magit-keymap
     :prefix magit-prefix
 	""  '(nil :wk "Magit")
 	"g" '(magit :wk "Opens magit dashboard") ; Opens magit dashboard
