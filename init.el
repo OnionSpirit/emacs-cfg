@@ -43,7 +43,11 @@
 
 ;; Fringe settings
 (fringe-mode '(8 . 0)) ;; органичиталь текста только слева
+;; Denable system-dependent key stuff
+(set-keyboard-coding-system nil)
 
+;; Map Alt key to Meta
+(setq x-alt-keysym 'meta)
 
 ;; Display file size/time in mode-line
 (setq display-time-24hr-format t) ;; 24-часовой временной формат в mode-line

@@ -34,6 +34,10 @@
 (use-package mic-paren
 	:config
 	(paren-activate))
+	
+	
+;; GPG keys updater	
+(use-package gnu-elpa-keyring-update)
 
 
 
