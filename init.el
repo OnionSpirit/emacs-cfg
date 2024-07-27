@@ -70,10 +70,6 @@
 (global-set-key (kbd "RET") 'newline-and-indent) ;; при нажатии Enter перевести каретку и сделать отступ
 (setq lisp-indent-function  'common-lisp-indent-function)
 
-;; Start window size
-(when (window-system)
-    (set-frame-size (selected-frame) 150 50))
-
 ;; Scrolling settings
 (setq scroll-step               1) ;; вверх-вниз по 1 строке
 (setq scroll-margin            10) ;; сдвигать буфер верх/вниз когда курсор в 10 шагах от верхней/нижней границы  
@@ -154,9 +150,13 @@
  '(paren-face-no-match ((t (:foreground "goldenrod")))))
 
 
-;; Centring frame at the screen 
-(frame-center)
-
 ;; Removing inital advices
 (advice-remove 'nerd-icons-install-fonts #'my/disable-yornp)
 (advice-remove 'restart-emacs #'my/disable-yornp)
+
+
+;; Start window size and centring frame at the screen 
+(when (window-system)
+    (set-frame-size (selected-frame) 150 50)
+    (frame-center))
+
