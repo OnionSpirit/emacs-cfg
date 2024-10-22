@@ -157,5 +157,6 @@
 	"g" '(magit :wk "Opens magit dashboard") ; Opens magit dashboard
     "d" '(magit-dispatch :wk "Opens short magit dashboard")	; Opens short magit dashboard
 	"i" '(blamer-show-posframe-commit-info :wk "Show pop-up commit info") ; Show pop-up commit info
+  	"t" '(global-blamer-mode :wk "Toggle message printing") ; Toggle message printing
 	"b" '(magit-blame :wk "Opens magit blame settings")	; Opens magit blame settings
     )

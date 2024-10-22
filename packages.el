@@ -317,7 +317,7 @@
                      :background nil
                      :height 140
                      :italic t))))
-(global-blamer-mode 1)
+(global-blamer-mode 0)                  ;; Отключаем Blamer потому что не всегда удобно
 
 
 ;; General, Fancy keybindings
