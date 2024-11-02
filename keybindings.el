@@ -19,15 +19,16 @@
 
 ;; Global hotkeys
 (general-def
-	"C-c c c" 'compile					; Start compilation
-	"M-z" 'undo-redo					; Rollback undoed changes
-	"C-z" 'undo							; Undo changes
-	"C-c r" 'restart-emacs				; Restart emacs
-	"C-`" 'shell-pop					; Popup terminal
-    "M-p" 'backward-paragraph           ; Moves coursor to the next paragraph
-    "M-n" 'forward-paragraph            ; Moves coursor to the previous paragraph
-	"M-<up>" 'move-text-up				; Moves selected region up
-	"M-<down>" 'move-text-down			; Moves selected region down
+	"C-c c c" 'compile					  ; Start compilation
+	"M-z" 'undo-redo					  ; Rollback undoed changes
+	"C-z" 'undo						  ; Undo changes
+	"C-c r" 'restart-emacs				  ; Restart emacs
+	"C-`" 'shell-pop					  ; Popup terminal
+    "M-p" 'backward-paragraph             ; Moves coursor to the next paragraph
+    "M-n" 'forward-paragraph              ; Moves coursor to the previous paragraph
+	"M-<up>" 'move-text-up				  ; Moves selected region up
+	"M-<down>" 'move-text-down			  ; Moves selected region down
+    "C-c f w" 'delete-trailing-whitespace ; Deletes witespaces at the end of the line
     )
 
 

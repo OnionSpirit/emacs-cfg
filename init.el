@@ -7,7 +7,7 @@
 ;; (setq frame-title-format "GNU Emacs: %b")
 ;; ;; Disable name of the current buffer in the title bar
 ;; (setq frame-title-format "")
- 
+
 ;; Disable system titlebar
 (setq-default default-frame-alist
       (append
@@ -60,6 +60,7 @@
 (require 'font-lock)
 (global-font-lock-mode             t) ;; включено с версии Emacs-22. На всякий...
 (setq font-lock-maximum-decoration t)
+(global-whitespace-mode 1)					;; Подветка символов отступа
 
 ;; Indent setting
 (setq-default indent-tabs-mode nil) ;; отключить возможность ставить отступы TAB'ом
@@ -72,7 +73,7 @@
 
 ;; Scrolling settings
 (setq scroll-step               1) ;; вверх-вниз по 1 строке
-(setq scroll-margin            10) ;; сдвигать буфер верх/вниз когда курсор в 10 шагах от верхней/нижней границы  
+(setq scroll-margin            10) ;; сдвигать буфер верх/вниз когда курсор в 10 шагах от верхней/нижней границы
 (setq scroll-conservatively 10000)
 
 ;; Clipboard settings
@@ -147,16 +148,24 @@
  '(mode-line-inactive ((t (:foreground "#a6adc8" :background "#313244" :box "#6c7086"))))
  '(paren-face-match ((t (:box (:color "light sky blue" :style pressed-button)))))
  '(paren-face-mismatch ((t (:foreground "indian red"))))
- '(paren-face-no-match ((t (:foreground "goldenrod")))))
+ '(paren-face-no-match ((t (:foreground "goldenrod"))))
+ '(trailing-whitespace ((t (:background nil :foreground "#fab387")))))
 
+;; make whitespace-mode use just basic coloring
+;;(setq whitespace-style (quote (spaces tabs newline space-mark tab-mark newline-mark)))
+(setq whitespace-display-mappings
+  '(
+    (space-mark 32 [183] [46]) ; 32 SPACE 「 」, 183 MIDDLE DOT 「·」, 46 FULL STOP 「.」
+    (newline-mark 10 [#x21B2 10]) ; 10 LINE FEED
+    (tab-mark 9 [#x27F6 9] [#x27F6 9]) ; 9 TAB
+    ))
 
 ;; Removing inital advices
 (advice-remove 'nerd-icons-install-fonts #'my/disable-yornp)
 (advice-remove 'restart-emacs #'my/disable-yornp)
 
 
-;; Start window size and centring frame at the screen 
+;; Start window size and centring frame at the screen
 (when (window-system)
     (set-frame-size (selected-frame) 150 50)
     (frame-center))
-
