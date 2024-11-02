@@ -149,7 +149,9 @@
  '(paren-face-match ((t (:box (:color "light sky blue" :style pressed-button)))))
  '(paren-face-mismatch ((t (:foreground "indian red"))))
  '(paren-face-no-match ((t (:foreground "goldenrod"))))
- '(trailing-whitespace ((t (:background nil :foreground "#fab387")))))
+ '(trailing-whitespace ((t (:background nil :foreground "#fab387"))))
+ '(whitespace-line ((t (:underline nil)))))
+          ;Настройки для слишком длинных линий
 
 ;; make whitespace-mode use just basic coloring
 ;;(setq whitespace-style (quote (spaces tabs newline space-mark tab-mark newline-mark)))

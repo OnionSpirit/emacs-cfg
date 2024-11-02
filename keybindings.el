@@ -53,7 +53,7 @@
     "<backtab>" 'dired-kill-subdir      ; Kill extra subdir
     )
 
-;; Creating new object in dired mode 
+;; Creating new object in dired mode
 (general-define-key
     :keymaps 'dired-mode-map
     :prefix "C-c d"
@@ -94,7 +94,7 @@
 (lsp-keymap
     :prefix lsp-prefix
 	""  '(nil :wk "LSP language server")
-    "s" '(lsp-ui-imenu :wk "imenu with code entities")                  ; imenu with Code entities 
+    "s" '(lsp-ui-imenu :wk "imenu with code entities")                  ; imenu with Code entities
     "l" '(lsp :wk "Start Language server")                              ; Start language server
 	"d" '(dap-debug :wk "Start Debugging")                              ; Start Debugging
     )
@@ -104,6 +104,23 @@
     [remap xref-find-definitions] 'lsp-ui-peek-find-definitions ; Remap for definitions search
     [remap xref-find-references] 'lsp-ui-peek-find-references   ; Remap for references search
 )
+
+;; DAP (Debugger)
+(defconst dap-prefix (concat start-utility-prefix "d")) ; DAP utility prefix - l
+(general-create-definer dap-keymap)
+
+(dap-keymap
+    :prefix dap-prefix
+	""  '(nil :wk "DAP - Debugger")
+    "l" '(dap-ui-locals :wk "Show window with locals")                       ; Open locals window
+    "w" '(dap-ui-expressions :wk "Show window with watching expressions")    ; Open expressions window
+    "s" '(dap-ui-sessions :wk "Show window with active debug sessions")      ; Open debug sessions window
+    "c" '(dap-ui-controls-mode :wk "Toggle control buttons")                 ; Toggle debug control buttons bar
+    "e" '(dap-eval :wk "Evaluate expression")                                ; Evaluate expression for GDB
+    "d" '(dap-ui-breakpoints :wk "Show window with breakpoints")             ; Open breakpoints window
+    "h" '(dap-hydra :wk "Minibuffer with debugging hotkeys")                 ; Open panel with hotkeys (Nice to use instead control buttons)
+	"d" '(dap-debug :wk "Start Debugging")                                   ; Start Debugging session
+    )
 
 
 ;; Treemacs

@@ -126,7 +126,8 @@
 	(dap-tooltip-mode 1)
 	(tooltip-mode 1)
 	(dap-ui-controls-mode 1)
-	(add-hook 'dap-stopped-hook (lambda (arg) (call-interactively #'dap-hydra))))
+    (setq dap-auto-configure-features '(tooltip))
+    (add-hook 'dap-terminated-hook (lambda (arg) (call-interactively #'dap-ui-controls-mode))))
 
 (use-package dap-gdb-lldb
 	:ensure dap-mode
