@@ -86,12 +86,39 @@
 	(after-init-hook . global-company-mode))
 
 
+;; Rustic installation
+(use-package rustic
+  :ensure t
+  :after
+  (rust-mode)
+  :config
+  (setq rustic-format-on-save nil)
+  :custom
+  (rustic-analyzer-command '("rustup" "run" "stable" "rust-analyzer"))
+  (rustic-cargo-use-last-stored-arguments t))
+
+;; Rust language support
+(use-package rust-mode
+    :init
+    (setq rust-format-on-save t)
+    :config
+    (add-hook 'rust-mode-hook (lambda () (setq indent-tabs-mode nil)))
+    (add-hook 'rust-mode-hook (lambda () (prettify-symbols-mode))))
+
+;; Cargo rust mode
+(use-package cargo-mode
+  :hook
+  (rust-mode . cargo-minor-mode)
+  :config
+  (setq compilation-scroll-output t))
+
 
 ;; LSP, language server
 (use-package lsp-mode
 	:init (setq lsp-keymap-prefix "M-s l")
 	:hook ((c++-mode . lsp)
 		   (c-mode . lsp)
+           (rust-mode-hook . lsp)
            ;; if you want which-key integration
            (lsp-mode . lsp-enable-which-key-integration))
 	:commands (lsp lsp-diferred))
@@ -134,7 +161,6 @@
 	:after dap-mode
 	:config
 	(dap-gdb-lldb-setup))
-
 
 
 ;; Treemacs, Popup window with project tree
