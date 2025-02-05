@@ -170,5 +170,5 @@
 
 ;; Start window size and centring frame at the screen
 (when (window-system)
-    (set-frame-size (selected-frame) 150 50)
+    (set-frame-width (selected-frame) 150)
     (frame-center))

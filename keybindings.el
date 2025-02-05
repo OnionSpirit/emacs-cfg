@@ -49,8 +49,14 @@
 ;; Subdir perfomance control
 (general-define-key
     :keymaps 'dired-mode-map
-    "<tab>" 'dired-insert-subdir        ; Open extra subdir
-    "<backtab>" 'dired-kill-subdir      ; Kill extra subdir
+    "<tab>" 'dired-insert-subdir                ; Open extra subdir
+    "<backtab>" 'dired-kill-subdir              ; Kill extra subdir
+    "f" 'dired-create-empty-file                ; Create empty file
+    "d" 'dired-create-directory                 ; Create empty directory
+    "x" 'dired-do-delete                        ; Delete selected item
+    "C-x x" 'dired-do-flagged-delete              ; Delete marked items
+	"C-<left>" 'dired-up-directory              ; Move root one directory up
+	"C-<right>" 'dired-find-file                ; Move root one directory down
     )
 
 ;; Creating new object in dired mode
@@ -133,6 +139,9 @@
     :keymaps 'treemacs-mode-map
     "c" 'treemacs-remove-project-from-workspace ; Close workspace
     "a" 'treemacs-add-project                   ; Add extra workspace
+    "f" 'treemacs-create-file                   ; Create empty file
+    "d" 'treemacs-create-dir                    ; Create empty directory
+    "x" 'treemacs-delete-file                   ; Delete selected item
 	"C-H" 'nil
 	"C-<left>" 'treemacs-root-up		        ; Move treemacs root one directory up
 	"C-<right>" 'treemacs-root-down				; Move treemacs root to selected directory
