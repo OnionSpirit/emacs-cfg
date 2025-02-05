@@ -121,6 +121,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(blink-matching-paren nil)
  '(doom-modeline-always-show-macro-register t)
  '(doom-modeline-bar-width 0)
  '(doom-modeline-buffer-file-true-name t)
@@ -146,8 +147,8 @@
  '(lsp-face-highlight-read ((t (:inherit highlight))))
  '(mode-line ((t (:foreground "#b4befe" :background "#45475a" :box "#cba6f7"))))
  '(mode-line-inactive ((t (:foreground "#a6adc8" :background "#313244" :box "#6c7086"))))
- '(paren-face-match ((t (:box (:color "light sky blue" :style pressed-button)))))
- '(paren-face-mismatch ((t (:foreground "indian red"))))
+ '(paren-face-match ((t (:background "dark slate blue" :foreground "sky blue"))))
+ '(paren-face-mismatch ((t (:background "light coral" :foreground "dark red"))))
  '(paren-face-no-match ((t (:foreground "goldenrod"))))
  '(trailing-whitespace ((t (:background nil :foreground "#fab387"))))
  '(whitespace-line ((t (:underline nil)))))

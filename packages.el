@@ -73,7 +73,16 @@
 
 
 ;; Magit, git client
-(use-package magit)
+(use-package magit
+    :config
+    (setq magit-blame-styles
+          '((margin
+             (margin-width . 20)
+             (margin-format . (" %A%f" " %c%f"))
+             (margin-face . ((t (:foreground "#b4befe" :background "#45475a" :box "#6c7086"))))
+             (margin-body-face . ((t (:foreground "#b4befe" :background "#45475a"))))
+             (show-message . t)))))
+
 (use-package ghub
 	:after magit)
 
