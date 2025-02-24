@@ -92,6 +92,10 @@
 (use-package company
 	:hook
 	(prog-mode . company-mode)
+    (scala-mode . company-mode)
+    (c++-mode . company-mode)
+	(c-mode . company-mode)
+    (rust-mode-hook . company-mode)
 	(after-init-hook . global-company-mode))
 
 
@@ -122,12 +126,25 @@
   (setq compilation-scroll-output t))
 
 
+;; Scala mode
+;; Enable scala-mode for highlighting, indentation and motion commands
+(use-package scala-mode
+  :interpreter ("scala" . scala-mode))
+
+;; (use-package lsp-metals
+;;   :after lsp-mode
+;;   :ensure t
+;; )
+
+
 ;; LSP, language server
 (use-package lsp-mode
 	:init (setq lsp-keymap-prefix "M-s l")
 	:hook ((c++-mode . lsp)
 		   (c-mode . lsp)
            (rust-mode-hook . lsp)
+           (scala-mode . lsp)
+           (lsp-mode . lsp-lens-mode)
            ;; if you want which-key integration
            (lsp-mode . lsp-enable-which-key-integration))
 	:commands (lsp lsp-diferred))

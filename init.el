@@ -36,6 +36,9 @@
 ;; Delete selection. Can paste above selected text
 (delete-selection-mode t)
 
+;;Truncate Lines
+(setq-default truncate-lines t)
+
 ;; Lines indication settings.
 (global-display-line-numbers-mode 1)
 (add-hook 'prog-mode-hook #'display-line-numbers-mode)
@@ -130,7 +133,7 @@
  '(doom-modeline-position-column-line-format '("%l:%c"))
  '(doom-modeline-position-line-format '(""))
  '(package-selected-packages
-   '(mic-paren shell-pop vterm which-key @ centaur-tabs lsp-treemacs consult treemacs-projectile treemacs dashboard projectile vertico))
+   '(lsp-metals mic-paren shell-pop vterm which-key @ centaur-tabs lsp-treemacs consult treemacs-projectile treemacs dashboard projectile vertico))
  '(paren-display-message 'always)
  '(paren-dont-load-timer nil)
  '(paren-message-linefeed-display "\"^J\"")
