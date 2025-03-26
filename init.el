@@ -133,7 +133,9 @@
  '(doom-modeline-position-column-line-format '("%l:%c"))
  '(doom-modeline-position-line-format '(""))
  '(package-selected-packages
-   '(lsp-metals mic-paren shell-pop vterm which-key @ centaur-tabs lsp-treemacs consult treemacs-projectile treemacs dashboard projectile vertico))
+   '(@ centaur-tabs consult dashboard lsp-metals lsp-treemacs meson-mode
+     mic-paren projectile shell-pop treemacs treemacs-projectile
+     vertico vterm which-key))
  '(paren-display-message 'always)
  '(paren-dont-load-timer nil)
  '(paren-message-linefeed-display "\"^J\"")
