@@ -78,7 +78,7 @@
     (setq magit-blame-styles
           '((margin
              (margin-width . 20)
-             (margin-format . (" %A%f" " %c%f"))
+             (margin-format . (" %c%f"))
              (margin-face . ((t (:foreground "#b4befe" :background "#45475a" :box "#6c7086"))))
              (margin-body-face . ((t (:foreground "#b4befe" :background "#45475a"))))
              (show-message . t)))))
