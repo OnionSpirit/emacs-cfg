@@ -39,7 +39,8 @@
   :config
   (setq auto-package-update-delete-old-versions t)
   (setq auto-package-update-hide-results t)
-  (auto-package-update-maybe))
+  ;; (auto-package-update-maybe) ;; Commented for now cuz annoying. Call 'auto-package-update-now' from M-x menu to manual update
+  )
 
 
 
@@ -53,7 +54,7 @@
 ;; Nerd icons and fonts, for sassy apearence
 (use-package nerd-icons
 	:config
-    (advice-add 'nerd-icons-install-fonts :around #'my/disable-yornp)
+    (Advice-add 'nerd-icons-install-fonts :around #'my/disable-yornp)
 	(unless (file-exists-p "~/.local/share/fonts/NFM.ttf")
 		(nerd-icons-install-fonts))
 	(unless (file-exists-p "~/.local/share/fonts/FiraCodeNerdFontMono-Regular.ttf")
@@ -85,6 +86,27 @@
 
 (use-package ghub
 	:after magit)
+
+(use-package magit-todos
+  :after magit
+  :config (magit-todos-mode 1))
+
+(use-package hl-todo
+  :after magit
+  :config
+  (setq
+   hl-todo-highlight-punctuation ":"
+   hl-todo-keyword-faces
+   '(("TODO"   . "#fe640b")
+     ("FIXME"  . "#179299")
+     ("NOTE"   . "#7287fd")))
+  (with-eval-after-load 'magit
+  (add-hook 'magit-log-wash-summary-hook
+            #'hl-todo-search-and-highlight t)
+  (add-hook 'magit-revision-wash-message-hook
+            #'hl-todo-search-and-highlight t))
+  (global-hl-todo-mode)
+  )
 
 
 
